@@ -3,7 +3,7 @@ public class Main {
     /**
      * Einstieg in ein Javaprogramm.
      */
-    public static void main(String[] args){
+          public static void main(String[] args){
         // Im Indischen Ozean wurde eine insel entdeck, auf der sich eine 
         // bis dahin nicht bekannte Vogelart rasant vermehrt. Forscher
         // haben im Januar ihr Arbeit gestartet und folgende Beobachtung
@@ -21,11 +21,17 @@ public class Main {
         // p(m) = 1              wenn 0 < m <= 2
         // p(m) = p*(m-1)*(m-2)  sonst
         
-        int monat = 2;
+        int monat = 6;
         System.out.println(population(monat));
     }
     
     public static int population(int m){
-        return 0;
+        if(m<=0){
+            return 0;
+        }else if(0<m && m<=2){
+            return 1;
+        }else{
+            return population(m-1) + population(m-2);
+        }
     }
 }
