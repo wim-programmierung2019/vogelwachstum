@@ -21,10 +21,23 @@ public class Main {
         // p(m) = 1              wenn 0 < m <= 2
         // p(m) = p(m-1)+p(m-2)  sonst
         
-        int monat = 4;
-        System.out.println(population(monat));
+        int monat = 23;
+        
+        // Mit einem Arry und einer Schleife! 
+        int[] zwischenwerte = new int[24];
+        zwischenwerte[0] = 0;
+        zwischenwerte[1] = 1;
+        zwischenwerte[2] = 1;
+
+        for(int i= 3; i <= monat; i++){
+            zwischenwerte[i]= zwischenwerte[i-1]+ zwischenwerte[i-2];
+        }
+        System.out.println(zwischenwerte[monat]);
+        //System.out.println(population(monat));
     }
     
+    /**
+    // Rekursive über die Methode 
     public static int population(int m){
        int rueckgabe = 0;
        
@@ -40,5 +53,5 @@ public class Main {
           rueckgabe= population(m-1) + population(m-2); 
           return rueckgabe;
        }
-    }
+    }*/
 }
