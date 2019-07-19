@@ -22,7 +22,15 @@ public class Main {
         // p(m) = p*(m-1)*(m-2)  sonst
         
         int monat = 6;
-        System.out.println(population(monat));
+        int[] zwischenwerte = new int [20];
+        zwischenwerte[0]=0;
+        zwischenwerte[1]=1;
+        zwischenwerte[2]=1;
+        for(int i = 3; i <=monat;i++){
+            zwischenwerte[i]= zwischenwerte[i-1] + zwischenwerte [i-2];
+           }
+        System.out.println(zwischenwerte[monat]);
+        ///System.out.println(population(monat));
     }
     
     public static int population(int m){
