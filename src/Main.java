@@ -22,7 +22,22 @@ public class Main {
         // p(m) = p(m-1)+p(m-2)  sonst
         
         int monat = 7;
+        
+        // Lösung mit Rekursion
         int ergebnis = population(monat);
+        System.out.println(ergebnis);
+        
+        // Lösung mit Schleifen
+        int[] zwischenwerte = new int[monat];
+        zwischenwerte[0] = 0;
+        zwischenwerte[1] = 1;
+        zwischenwerte[2] = 1;
+        
+        for(int i=3; i<=monat; i++){
+            zwischenwerte[i] = zwischenwerte[i-1] + zwischenwerte[i-2];
+        }
+        ergebnis = zwischenwerte[monat];
+        
         System.out.println(ergebnis);
     }
     
